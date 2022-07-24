@@ -16,6 +16,12 @@ func main() {
 		"Desember",
 	}
 
+	// membuat slice dari array
+	// array[low:high] => membuat slice dari array dimulai index low sampai index sebelum high
+	// array[low:] => membuat slice dari array dimulai index low sampai index akhir  di array
+	// array[:high] => membuat slice dari array dimulai index 0 sampai index sebelum high
+	// array[:] => membuat slice dari array dimulai index 0 sampai index akhir di array
+
 	// function slice
 	// len(slice) => untuk mendapatkan panjang
 	// cap(slice) => untuk mendapatkan kapasitas
@@ -41,7 +47,7 @@ func main() {
 	slice1[0] = "UbahSlice"
 	fmt.Println(months)
 
-	fmt.Println("<==END==>")
+	fmt.Println("<==END ==>")
 
 	// append slice
 	days := [...]string{"Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu", "Minggu"}
@@ -57,4 +63,21 @@ func main() {
 	daySlice2[0] = "Ops"
 	fmt.Println(daySlice2)
 	fmt.Println(days)
+
+	fmt.Println("<==Make Slice==>")
+	newSlice := make([]string, 2, 5)
+	newSlice[0] = "Yoga"
+	newSlice[1] = "Yoga"
+
+	fmt.Println(newSlice)
+	fmt.Println(len(newSlice))
+	fmt.Println(cap(newSlice))
+
+	fmt.Println("<==Copy Slice==>")
+
+	fromSlice := days[:]
+	toSlice := make([]string, len(fromSlice), cap(fromSlice))
+	copy(toSlice, fromSlice)
+	fmt.Println(toSlice)
+
 }
