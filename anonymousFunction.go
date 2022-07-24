@@ -23,11 +23,3 @@ func registerUser(name string, blacklist BlackListUser) {
 		fmt.Println("Welcome ", name)
 	}
 }
-
-// func blacklistAdmin(name string) bool {
-// 	return name == "admin"
-// }
-
-// func blacklistRoot(name string) bool {
-// 	return name == "root"
-// }
